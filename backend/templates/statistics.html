@@ -1,0 +1,444 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Statistics
+
+{% endblock %}
+
+{% block content %}
+
+<h2 class="fw-bold mb-4">
+
+Statistics
+
+</h2>
+
+<div class="card">
+
+<div class="card-body">
+
+<table class="table table-hover">
+
+<thead>
+
+<tr>
+
+<th>Pranayama</th>
+
+<th>Count</th>
+
+<th>Total Duration</th>
+
+<th>Average</th>
+
+<th>Longest</th>
+
+<th>Shortest</th>
+
+<th>Confidence</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in statistics %}
+
+<tr>
+
+<td>{{ row.pranayama }}</td>
+
+<td>{{ row.total_count }}</td>
+
+<td>{{ row.total_duration }}</td>
+
+<td>{{ row.average_duration }}</td>
+
+<td>{{ row.longest_duration }}</td>
+
+<td>{{ row.shortest_duration }}</td>
+
+<td>{{ row.average_confidence }}%</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="row g-4 mb-5">
+
+    <div class="col-lg-6">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <i class="bi bi-pie-chart-fill"></i>
+
+                Om vs Bhramari
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="pieChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <i class="bi bi-bar-chart-fill"></i>
+
+                Practice Duration
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="durationChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card mb-4">
+
+    <div class="card-header">
+
+        <i class="bi bi-award-fill"></i>
+
+        Model Accuracy Comparison
+
+    </div>
+
+    <div class="card-body text-center">
+
+        <img
+            src="{{ url_for('static', filename='images/accuracy_comparison.png') }}"
+            class="img-fluid rounded shadow">
+
+    </div>
+
+</div>
+
+<div class="card mb-4">
+
+    <div class="card-header">
+
+        <i class="bi bi-diagram-3-fill"></i>
+
+        PCA Visualization
+
+    </div>
+
+    <div class="card-body text-center">
+
+        <img
+            src="{{ url_for('static', filename='images/pca_visualization.png') }}"
+            class="img-fluid rounded shadow">
+
+    </div>
+
+</div>
+
+<div class="card mb-4">
+
+    <div class="card-header">
+
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+
+        Confusion Matrices
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-6 mb-4">
+
+                <h5 class="text-center">SVM</h5>
+
+                <img
+                    src="{{ url_for('static', filename='images/svm_confusion_matrix.png') }}"
+                    class="img-fluid rounded shadow">
+
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+                <h5 class="text-center">Logistic Regression</h5>
+
+                <img
+                    src="{{ url_for('static', filename='images/lr_confusion_matrix.png') }}"
+                    class="img-fluid rounded shadow">
+
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+                <h5 class="text-center">Decision Tree</h5>
+
+                <img
+                    src="{{ url_for('static', filename='images/dt_confusion_matrix.png') }}"
+                    class="img-fluid rounded shadow">
+
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+                <h5 class="text-center">Neural Network</h5>
+
+                <img
+                    src="{{ url_for('static', filename='images/nn_confusion_matrix.png') }}"
+                    class="img-fluid rounded shadow">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="card-header">
+
+        <i class="bi bi-table"></i>
+
+        Classification Report Summary
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-striped table-hover">
+
+            <thead>
+
+            <tr>
+
+                <th>Model</th>
+
+                <th>Accuracy</th>
+
+                <th>Status</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <td>SVM</td>
+
+                <td>88%</td>
+
+                <td><span class="badge bg-success">Best Traditional ML</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Neural Network</td>
+
+                <td>86%</td>
+
+                <td><span class="badge bg-primary">Deep Learning</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Logistic Regression</td>
+
+                <td>84%</td>
+
+                <td><span class="badge bg-info">Linear Model</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Decision Tree</td>
+
+                <td>79%</td>
+
+                <td><span class="badge bg-warning text-dark">Baseline</span></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const omCount = {{ om_count }};
+    const bhramariCount = {{ bhramari_count }};
+
+    const omDuration = {{ om_duration }};
+    const bhramariDuration = {{ bhramari_duration }};
+
+    // Pie Chart
+
+    new Chart(
+
+        document.getElementById("pieChart"),
+
+        {
+
+            type: "pie",
+
+            data: {
+
+                labels: [
+
+                    "Om",
+
+                    "Bhramari"
+
+                ],
+
+                datasets: [{
+
+                    data: [
+
+                        omCount,
+
+                        bhramariCount
+
+                    ],
+
+                    backgroundColor: [
+
+                        "#2563EB",
+
+                        "#16A34A"
+
+                    ]
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+
+                        position: "bottom"
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    );
+
+
+    // Duration Chart
+
+    new Chart(
+
+        document.getElementById("durationChart"),
+
+        {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+
+                    "Om",
+
+                    "Bhramari"
+
+                ],
+
+                datasets: [{
+
+                    label: "Duration (sec)",
+
+                    data: [
+
+                        omDuration,
+
+                        bhramariDuration
+
+                    ],
+
+                    backgroundColor: [
+
+                        "#2563EB",
+
+                        "#16A34A"
+
+                    ]
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    );
+
+});
+
+</script>
+
+{% endblock %}

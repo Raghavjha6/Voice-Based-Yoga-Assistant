@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+    Bhramari       0.89      0.85      0.87        20
+          Om       0.88      0.91      0.89        23
+
+    accuracy                           0.88        43
+   macro avg       0.88      0.88      0.88        43
+weighted avg       0.88      0.88      0.88        43

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+History
+
+{% endblock %}
+
+{% block content %}
+
+<!-- ===================== Action Buttons ===================== -->
+<div class="text-center mb-5">
+
+    <a
+
+        href="/history-page"
+
+        class="btn btn-primary me-2">
+
+        <i class="bi bi-arrow-clockwise"></i>
+
+        Refresh
+
+    </a>
+
+    <button
+
+        class="btn btn-success me-2"
+
+        id="exportExcel">
+
+        <i class="bi bi-file-earmark-excel"></i>
+
+        Export Excel
+
+    </button>
+
+    <button
+
+        class="btn btn-secondary me-2"
+
+        id="exportCSV">
+
+        <i class="bi bi-filetype-csv"></i>
+
+        Export CSV
+
+    </button>
+
+    <button
+
+        class="btn btn-danger"
+
+        onclick="deleteHistory()">
+
+        <i class="bi bi-trash-fill"></i>
+
+        Clear History
+
+    </button>
+
+</div>
+
+<div class="row mb-4">
+
+    <div class="col">
+
+        <h2 class="fw-bold">
+
+            Session History
+
+        </h2>
+
+    </div>
+
+</div>
+
+<div class="card mb-4">
+
+    <div class="card-body">
+
+        <input
+
+            id="searchInput"
+
+            class="form-control"
+
+            type="text"
+
+            placeholder="Search..."
+
+            onkeyup="searchTable()">
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="card-header">
+
+        History
+
+    </div>
+
+    <div class="card-body table-responsive">
+
+        <table
+
+            id="historyTable"
+
+            class="table table-hover">
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Date</th>
+
+                <th>Time</th>
+
+                <th>Pranayama</th>
+
+                <th>Duration</th>
+
+                <th>Confidence</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for row in history %}
+
+            <tr>
+
+                <td>{{ row.id }}</td>
+
+                <td>{{ row.date }}</td>
+
+                <td>{{ row.time }}</td>
+
+                <td>{{ row.pranayama }}</td>
+
+                <td>{{ row.duration }}</td>
+
+                <td>{{ "%.2f"|format(row.confidence*100) }}%</td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

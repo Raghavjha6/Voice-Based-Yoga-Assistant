@@ -1,0 +1,478 @@
+/* ===========================
+   Google Font
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    background:#F5F7FB;
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   Wrapper
+=========================== */
+
+.wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+
+    width:250px;
+
+    background:#0F172A;
+
+    color:white;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    height:100vh;
+
+    padding:30px 20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* Logo */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.logo i{
+
+    font-size:60px;
+
+    color:white;
+
+}
+
+.logo h4{
+
+    margin-top:15px;
+
+    font-weight:600;
+
+}
+
+/* Navigation */
+
+.sidebar .nav-link{
+
+    color:#CBD5E1;
+
+    padding:14px 18px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:17px;
+
+}
+
+.sidebar .nav-link i{
+
+    margin-right:12px;
+
+}
+
+.sidebar .nav-link:hover{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.sidebar .active{
+
+    background:#2563EB;
+
+    color:white !important;
+
+}
+
+/* ===========================
+   Main
+=========================== */
+
+.main-content{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    padding:30px;
+
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+    height:80px;
+
+}
+
+.title{
+
+    font-size:30px;
+
+    font-weight:600;
+
+    margin-left:15px;
+
+}
+
+.info-box{
+
+    background:white;
+
+    padding:10px 20px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    font-weight:500;
+
+}
+
+.info-box i{
+
+    margin-right:8px;
+
+}
+
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.dashboard-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.dashboard-card .card-body{
+
+    padding:35px;
+
+}
+
+.dashboard-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.dashboard-card h5{
+
+    font-weight:600;
+
+}
+
+.dashboard-card i{
+
+    font-size:50px;
+
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.card-header{
+
+    background:white;
+
+    font-weight:600;
+
+    border:none;
+
+    padding:20px;
+
+}
+
+/* ===========================
+   Charts
+=========================== */
+
+canvas{
+
+    max-height:320px;
+
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#0F172A;
+
+    color:white;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn{
+
+    border-radius:12px;
+
+    font-weight:500;
+
+    padding:10px 22px;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+
+    margin-left:250px;
+
+    background:#0F172A;
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:80px;
+
+}
+
+.sidebar h4{
+
+    display:none;
+
+}
+
+.sidebar .nav-link{
+
+    text-align:center;
+
+}
+
+.sidebar .nav-link i{
+
+    margin-right:0;
+
+}
+
+.sidebar .nav-link{
+
+    font-size:0;
+
+}
+
+.sidebar .nav-link i{
+
+    font-size:22px;
+
+}
+
+.main-content{
+
+    margin-left:80px;
+
+    width:calc(100% - 80px);
+
+}
+
+footer{
+
+    margin-left:80px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main-content{
+
+    padding:15px;
+
+}
+
+.navbar{
+
+    flex-direction:column;
+
+    height:auto;
+
+    gap:15px;
+
+}
+
+.title{
+
+    font-size:24px;
+
+}
+
+.info-box{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+}
+
+/* ===========================
+   Dark Mode
+=========================== */
+
+body.dark-mode{
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+body.dark-mode .card{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+body.dark-mode .navbar{
+
+    background:#1e293b !important;
+
+}
+
+body.dark-mode .table{
+
+    color:white;
+
+}
+
+body.dark-mode .table thead{
+
+    background:#334155;
+
+}
+
+body.dark-mode .info-box{
+
+    background:#1e293b;
+
+    color:white;
+
+}

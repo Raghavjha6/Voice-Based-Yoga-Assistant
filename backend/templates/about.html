@@ -1,0 +1,531 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Header -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-body text-center">
+
+            <h1 class="fw-bold text-primary">
+
+                🧘 Voice-Based Yoga Assistant
+
+            </h1>
+
+            <h5 class="text-muted">
+
+                AI Powered Pranayama Recognition System
+
+            </h5>
+
+            <hr>
+
+            <p>
+
+                <strong>Version :</strong> 1.0
+
+                |
+
+                <strong>Course :</strong> MCA Major Project
+
+                |
+
+                <strong>University :</strong> MAKAUT
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Overview -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+            📌 Project Overview
+
+        </div>
+
+        <div class="card-body">
+
+            <p>
+
+                Voice-Based Yoga Assistant is an Artificial Intelligence based application
+
+                developed to recognize different Yoga Pranayama techniques from voice
+
+                recordings.
+
+            </p>
+
+            <p>
+
+                The application detects Om chanting and Bhramari Pranayama in real-time,
+
+                stores every session inside a SQLite database, and provides analytics
+
+                through a Flask dashboard.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Objective -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+
+            🎯 Objective
+
+        </div>
+
+        <div class="card-body">
+
+            <ul>
+
+                <li>Recognize yoga pranayama using only voice.</li>
+
+                <li>Perform real-time prediction using Machine Learning.</li>
+
+                <li>Automatically record and analyse every session.</li>
+
+                <li>Maintain practice history and statistics.</li>
+
+                <li>Provide a low-cost and contactless yoga assistant.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Why Project -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-warning">
+
+            ❓ Why This Project?
+
+        </div>
+
+        <div class="card-body">
+
+            <p>
+
+                Traditional yoga monitoring generally depends on cameras,
+
+                wearable devices or trainers.
+
+            </p>
+
+            <p>
+
+                This project demonstrates that pranayama techniques can be
+
+                recognized using only voice signals, making yoga monitoring
+
+                inexpensive, portable and accessible.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Workflow -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-info text-white">
+
+            ⚙️ System Workflow
+
+        </div>
+
+        <div class="card-body text-center">
+
+            <h5>
+
+                🎤 Voice Input
+
+                ↓
+
+                Voice Activity Detection
+
+                ↓
+
+                Audio Preprocessing
+
+                ↓
+
+                Feature Extraction
+
+                ↓
+
+                Machine Learning Models
+
+                ↓
+
+                Prediction
+
+                ↓
+
+                SQLite Database
+
+                ↓
+
+                Flask Dashboard
+
+                ↓
+
+                Flutter Mobile App
+
+            </h5>
+
+        </div>
+
+    </div>
+
+
+    <!-- ML Models -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-danger text-white">
+
+            🤖 Machine Learning Models
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead>
+
+                <tr>
+
+                    <th>Model</th>
+
+                    <th>Purpose</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>Support Vector Machine (SVM)</td>
+
+                    <td>Voice Classification</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Logistic Regression</td>
+
+                    <td>Binary Classification</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Decision Tree</td>
+
+                    <td>Decision Based Classification</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Neural Network</td>
+
+                    <td>Deep Learning Classification</td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Features -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-secondary text-white">
+
+            🎵 Audio Features Extracted
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <ul>
+
+                        <li>MFCC (20 Coefficients)</li>
+
+                        <li>Root Mean Square Energy</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <ul>
+
+                        <li>Zero Crossing Rate</li>
+
+                        <li>22+ Total Features</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Technology -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-dark text-white">
+
+            🛠 Technology Stack
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+                    <h5>Backend</h5>
+
+                    Flask
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h5>Database</h5>
+
+                    SQLite
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h5>Machine Learning</h5>
+
+                    TensorFlow
+
+                    <br>
+
+                    Scikit-learn
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h5>Frontend</h5>
+
+                    HTML
+
+                    <br>
+
+                    Bootstrap
+
+                    <br>
+
+                    JavaScript
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Packages -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+            📦 Python Packages
+
+        </div>
+
+        <div class="card-body">
+
+            <span class="badge bg-primary m-1">Python 3.10</span>
+
+            <span class="badge bg-success m-1">TensorFlow 2.15.0</span>
+
+            <span class="badge bg-success m-1">Keras 2.15.0</span>
+
+            <span class="badge bg-info m-1">NumPy 1.26.4</span>
+
+            <span class="badge bg-warning text-dark m-1">Librosa 0.10.2</span>
+
+            <span class="badge bg-danger m-1">Scikit-Learn 1.5.2</span>
+
+            <span class="badge bg-secondary m-1">Flask</span>
+
+            <span class="badge bg-secondary m-1">Flask-CORS</span>
+
+            <span class="badge bg-secondary m-1">Pandas</span>
+
+            <span class="badge bg-secondary m-1">SciPy</span>
+
+            <span class="badge bg-secondary m-1">Matplotlib</span>
+
+            <span class="badge bg-secondary m-1">Seaborn</span>
+
+            <span class="badge bg-secondary m-1">Joblib</span>
+
+            <span class="badge bg-secondary m-1">SoundFile</span>
+
+            <span class="badge bg-secondary m-1">SoundDevice</span>
+
+            <span class="badge bg-secondary m-1">WebRTCVAD</span>
+
+            <span class="badge bg-secondary m-1">OpenPyXL</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Features -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+
+            ⭐ Major Features
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <ul>
+
+                        <li>Real-Time Voice Detection</li>
+
+                        <li>Voice Activity Detection (VAD)</li>
+
+                        <li>Automatic Recording</li>
+
+                        <li>Real-Time Prediction</li>
+
+                        <li>Om Recognition</li>
+
+                        <li>Bhramari Recognition</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <ul>
+
+                        <li>SQLite Database</li>
+
+                        <li>Analytics Dashboard</li>
+
+                        <li>Statistics Dashboard</li>
+
+                        <li>Excel Export</li>
+
+                        <li>CSV Export</li>
+
+                        <li>Flutter Mobile Integration</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Future -->
+
+    <div class="card shadow mb-5">
+
+        <div class="card-header bg-info text-white">
+
+            🚀 Future Scope
+
+        </div>
+
+        <div class="card-body">
+
+            <ul>
+
+                <li>Add more Yoga Pranayams.</li>
+
+                <li>Cloud Synchronization.</li>
+
+                <li>AI Voice Coach.</li>
+
+                <li>Health Recommendation System.</li>
+
+                <li>Smartwatch Integration.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

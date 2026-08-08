@@ -1,0 +1,5 @@
+Model,Accuracy (%)
+Logistic Regression,83.72
+Decision Tree,79.7
+SVM,88.37
+Neural Network,86.05

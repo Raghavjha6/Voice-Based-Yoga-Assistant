@@ -1,0 +1,79 @@
+body{
+
+    background:#eef3f8;
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+}
+
+h1{
+
+    font-weight:700;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:0.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+}
+
+.card-header{
+
+    font-weight:600;
+
+}
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#212529;
+
+    color:white;
+
+}
+
+canvas{
+
+    max-height:300px;
+
+}
+
+.btn{
+
+    border-radius:10px;
+
+    padding:10px 20px;
+
+}
+
+.badge{
+
+    font-size:15px;
+
+    padding:8px 15px;
+
+}
+
+.container{
+
+    margin-bottom:40px;
+
+}
